@@ -30,23 +30,19 @@ class LazySettings(LazyObject):
             self._setup(name)
         return getattr(self._wrapped, name)
 
-    def configure(self, settings_module, **kw_options):
+    def configure(self, settings_module):
         """ Called to manually configure the settings.
-
         The 'default_settings' parameter sets where to retrieve any unspecified values from (its
         argument must support attribute access (__getattr__)).
 
-        :param settings_module: The path to the iziconf.ini configuration file. Only options declared in :mod:`iziconf.options.global_settings` will be parsed.
+        :param settings_module: The path to the iziconf.ini configuration file.
+ Only options declared in :mod:`iziconf.options.global_settings` will be parsed.
 
-        :param \*\*kw_options: Optional data dictionary to add extra options.
 
         """
         if self._wrapped is not empty:
             raise RuntimeError('Settings already configured.')
-        for name, value in kw_options.items():
-            setattr(holder, name, value)
         self._wrapped = self._settings_cls(settings_module, *self._args, **self._kwargs)
-
 
     def reconfigure(self, settings_module, **kw_options):
         """
@@ -61,7 +57,6 @@ class LazySettings(LazyObject):
                 dispose()
             self._wrapped = empty
         self.configure(settings_module, **kw_options)
-
 
     @property
     def configured(self):
