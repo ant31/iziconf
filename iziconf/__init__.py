@@ -9,6 +9,11 @@ from iziconf.global_settings import global_settings
 from iziconf.utils.singleton import Singleton
 
 
+__author__ = 'Antoine Legrand'
+__email__ = '2t.antoine@gmail.com'
+__version__ = '0.0.2'
+
+
 class Simpleconf(object):
     __metaclass__ = Singleton
     _default_conf = {"envvar_name": "SIMPLECONF_SETTINGS_FILE",
