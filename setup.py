@@ -25,7 +25,7 @@ test_requirements = [
 
 setup(
     name='iziconf',
-    version='0.0.2',
+    version='0.0.3',
     description="iziconf",
     long_description=readme,
     author="Antoine Legrand",

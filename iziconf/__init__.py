@@ -11,7 +11,7 @@ from iziconf.utils.singleton import Singleton
 
 __author__ = 'Antoine Legrand'
 __email__ = '2t.antoine@gmail.com'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 
 class Iziconf(object):
