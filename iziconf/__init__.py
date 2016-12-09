@@ -14,7 +14,7 @@ __email__ = '2t.antoine@gmail.com'
 __version__ = '0.0.2'
 
 
-class Simpleconf(object):
+class Iziconf(object):
     __metaclass__ = Singleton
     _default_conf = {"envvar_name": "SIMPLECONF_SETTINGS_FILE",
                      "settings_file": "/etc/SIMPLECONF/iziconf.yaml",
